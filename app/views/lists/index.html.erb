@@ -1,0 +1,25 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Create awsome Movie Lists!</h1>
+    <p></p>
+  </div>
+</div>
+    
+<div class="container flexbox">
+  <h2>my lists</h2>
+  <p><%= link_to 'create new list', new_list_path, class: "btn btn-flat" %></p>
+</div>
+
+<span>
+</span>
+
+<div class="container">
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('http://loremflickr.com/300/300/movie')">
+        <%= link_to list.name, list_path(list) %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
