@@ -17,7 +17,7 @@
   <div class="cards">
     <% @list.bookmarks.each do |bookmark| %>
       <div class="card-detail">
-        <div class="card-category" style='background-image: url("<%= cl_image_tag bookmark.photo.key, height: 300, width: 400, crop: :fill %>")' >
+        <div class="card-category" style='background-image: url("<%= cl_image_path bookmark.photo.key, height: 300, width: 400, crop: :fill %>")' >
         </div>
         <div class="card-detail-infos">
           <div class="flexbox bookmark-title-container">
