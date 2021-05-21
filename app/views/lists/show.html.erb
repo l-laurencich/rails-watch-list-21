@@ -16,11 +16,33 @@
 <div class="container">
   <div class="cards">
     <% @movies.each do |movie| %>
-      <div class="card-category" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), <%= movie.poster_url %>'>
-        <%= movie.title %>
+      <div class="card-detail">
+        <div class="card-category" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), <%= movie.poster_url %>'>
+        </div>
+        <div class="card-detail-infos">
+          <div class="flexbox">
+            <h3><%= movie.title %></h3>
+            <p><%= movie.rating %> <i class="far fa-star"></i></p>
+          </div>
+          <div class="overview">
+            <p><%= movie.overview %></p>
+          </div>
+          <div class="flexbox bottom-text">
+            <p><i class="fas fa-quote-left"></i> @bookmark-comment</p>
+            <%# <p><%= link_to 'delete',  bookmark_destroy(@bookmark)%></p>          %>
+          </div>
+
+          <h2 class="card-detail-pricing"></h2>
+
+          <div>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
 </div>
+
+
+
 
 

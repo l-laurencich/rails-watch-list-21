@@ -10,8 +10,26 @@ require 'faker'
 
 Movie.destroy_all
 
-250.times do
+1000.times do
   movie = Movie.new({title: Faker::Movie.title, overview: Faker::Quote.yoda, rating: rand(0.0..10.0).round(1)})
   movie.poster_url = "http://loremflickr.com/300/300/#{movie.title}"
   movie.save
 end
+
+# require "json"
+# require 'rest-client'
+
+# response = RestClient.get 'http://tmdb.lewagon.com/movie/top_rated'
+# movies_json = JSON.parse(response)
+# puts 'Getting all movies from leWagon movie-db...'
+
+# movies_json['results'].each do |i|
+#   Movie.create(
+#                 title: i['original_title'],
+#                 overview: i['original_title'],
+#                 poster_url: i['poster_path'],
+#                 rating: i['vote_average'].to_i
+#               )
+# end
+
+# puts 'db populated!'
