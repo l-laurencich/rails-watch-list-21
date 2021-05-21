@@ -15,21 +15,21 @@
 
 <div class="container">
   <div class="cards">
-    <% @movies.each do |movie| %>
+    <% @list.bookmarks.each do |bookmark| %>
       <div class="card-detail">
-        <div class="card-category" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), <%= movie.poster_url %>'>
+        <div class="card-category" style='background-image: url(<%= bookmark.movie.poster_url %>)' >
         </div>
         <div class="card-detail-infos">
           <div class="flexbox">
-            <h3><%= movie.title %></h3>
-            <p><%= movie.rating %> <i class="far fa-star"></i></p>
+            <h3><%= bookmark.movie.title %></h3>
+            <p><%= bookmark.movie.rating %> <i class="far fa-star"></i></p>
           </div>
           <div class="overview">
-            <p><%= movie.overview %></p>
+            <p><%= bookmark.movie.overview %></p>
           </div>
           <div class="flexbox bottom-text">
-            <p><i class="fas fa-quote-left"></i> @bookmark-comment</p>
-            <%# <p><%= link_to 'delete',  bookmark_destroy(@bookmark)%></p>          %>
+            <p><i class="fas fa-quote-left"></i> <%= bookmark.comment %></p>
+            <p style="color: red"><%= link_to 'delete',  bookmark_path(bookmark), method: :delete %></p>         
           </div>
 
           <h2 class="card-detail-pricing"></h2>
