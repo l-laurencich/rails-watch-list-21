@@ -2,6 +2,7 @@
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.association :movie %>
     <%= f.input :comment %>
+    <%= f.input :photo, as: :file %>
     <%= f.button :submit, class: "btn btn-flat"%>
     <%= link_to 'Back', list_path(@list) , class: 'btn btn-flat' %>
   <% end %>

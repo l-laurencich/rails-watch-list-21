@@ -23,12 +23,14 @@
 }
 
 
-.card-detail .card-detail-infos {
+.card-detail-infos {
   padding: 16px;
-  // display: flex;
+  display: flex;
+  flex-direction: column;
   // justify-content: space-between;
-  // align-items: flex-end;
-  // position: relative;
+  height: 253px;
+  // align-items: center;
+  position: relative;
 }
 
 .card-detail .overview {
@@ -38,7 +40,11 @@
 
 }
 
-// .card-detail .bottom-text {
-//   position: absolute;
-//   bottom: 8px;
-// }
+.bottom-text {
+  position: absolute;
+  bottom: 12px;
+  }
+
+.bottom-text a{
+  color: red;
+}

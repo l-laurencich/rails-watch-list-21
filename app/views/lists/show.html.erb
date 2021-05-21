@@ -17,10 +17,10 @@
   <div class="cards">
     <% @list.bookmarks.each do |bookmark| %>
       <div class="card-detail">
-        <div class="card-category" style='background-image: url(<%= bookmark.movie.poster_url %>)' >
+        <div class="card-category" style='background-image: url("<%= cl_image_tag bookmark.photo.key, height: 300, width: 400, crop: :fill %>")' >
         </div>
         <div class="card-detail-infos">
-          <div class="flexbox">
+          <div class="flexbox bookmark-title-container">
             <h3><%= bookmark.movie.title %></h3>
             <p><%= bookmark.movie.rating %> <i class="far fa-star"></i></p>
           </div>
@@ -28,13 +28,8 @@
             <p><%= bookmark.movie.overview %></p>
           </div>
           <div class="flexbox bottom-text">
-            <p><i class="fas fa-quote-left"></i> <%= bookmark.comment %></p>
-            <p style="color: red"><%= link_to 'delete',  bookmark_path(bookmark), method: :delete %></p>         
-          </div>
-
-          <h2 class="card-detail-pricing"></h2>
-
-          <div>
+            <div><p><i class="fas fa-quote-left"></i> <%= bookmark.comment %>     -</p></div>
+            <div><p><%= link_to 'delete',  bookmark_path(bookmark), method: :delete %></p></div>
           </div>
         </div>
       </div>
